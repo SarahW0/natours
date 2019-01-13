@@ -1,0 +1,65 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+@mixin gradient-effect {
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  /* background applied to text */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+@mixin absolute-center {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+// media query manager
+/* * 0-400px:   small-phone
+/* * 400-600px:   phone
+* 600-900px: tablet portait
+* 900-1200px : tablets landscape
+* 1200-1800: normal style
+* 1800: big desktop */
+// order: base + typography > general layout + grid > page layout > components
+@mixin respond($breakpoint) {
+  @if $breakpoint== small-phone {
+    @media only screen and (max-width: 400px) {
+      @content;
+    }
+  }
+  @if $breakpoint== phone {
+    @media only screen and (max-width: 600px) {
+      @content;
+    }
+  }
+  @if $breakpoint== tab-port {
+    @media only screen and (max-width: 900px) {
+      @content;
+    }
+  }
+  @if $breakpoint== tab-land {
+    @media only screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+  @if $breakpoint== big-desktop {
+    @media only screen and (min-width: 1800px) {
+      @content;
+    }
+  }
+}

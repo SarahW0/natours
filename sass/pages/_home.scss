@@ -1,0 +1,139 @@
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 20rem 0;
+  margin-top: -12vh;
+
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    margin-top: -18vh;
+  }
+  @include respond(tab-port) {
+    padding: 20rem 0;
+  }
+}
+
+.section-features {
+  margin-top: -18rem;
+  padding: 16rem 0;
+  text-align: center;
+  background-image: linear-gradient(
+      to bottom right,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url("../img/nat-4.jpg");
+  background-size: cover;
+
+  transform: skewY(-7deg);
+  -webkit-transform: skewY(-7deg);
+  -moz-transform: skewY(-7deg);
+  -ms-transform: skewY(-7deg);
+  -o-transform: skewY(-7deg);
+
+  & > * {
+    overflow: hidden;
+
+    transform: skewY(7deg);
+    -webkit-transform: skewY(7deg);
+    -moz-transform: skewY(7deg);
+    -ms-transform: skewY(7deg);
+    -o-transform: skewY(7deg);
+  }
+
+  .col-1-4 {
+    padding-bottom: 500rem;
+    margin-bottom: -500rem;
+    box-shadow: 1rem 2rem 2rem rgba($color-black, 0.15);
+    background-color: rgba($color-white, 0.8);
+    transition: all, 0.2s;
+
+    -webkit-transition: all, 0.2s;
+    -moz-transition: all, 0.2s;
+    -ms-transition: all, 0.2s;
+    -o-transition: all, 0.2s;
+    &:hover {
+      transform: translateY(0.5rem) scaleX(1.03);
+      -webkit-transform: translateY(-0.5rem) scaleX(1.03);
+      -moz-transform: translateY(-0.5rem) scaleX(1.03);
+      -ms-transform: translateY(-0.5rem) scaleX(1.03);
+      -o-transform: translateY(-0.5rem) scaleX(1.03);
+    }
+
+    @include respond(tab-port) {
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0rem 0.5rem 1rem rgba($color-black, 0.15);
+    }
+  }
+
+  @include respond(tab-port) {
+    padding: 12rem 0 8rem 0;
+  }
+}
+
+.section-tours {
+  background-color: $color-grey-light-1;
+  padding: 20rem 0 8rem 0;
+  margin-top: -8vh;
+
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    margin-top: -10vh;
+  }
+  @include respond(tab-port) {
+    padding: 15rem 0 2rem 0;
+  }
+}
+
+.section-stories {
+  padding: 10rem 0;
+  position: relative;
+
+  overflow: hidden;
+
+  @include respond(tab-port) {
+    padding: 6rem 0;
+  }
+}
+
+.section-book {
+  padding: 10rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  .book {
+    background-image: linear-gradient(
+        103deg,
+        rgba($color-white, 0.9) 0,
+        rgba($color-white, 0.9) 50%,
+        transparent 50%,
+        transparent
+      ),
+      url("../../img/nat-10.jpg");
+    background-size: cover;
+    margin: 5% 10%;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.5);
+    &__form {
+      width: 50%;
+      padding: 3rem;
+    }
+  }
+  @include respond(tab-land) {
+    padding: 3rem 0;
+    .book {
+      background-image: linear-gradient(
+          rgba($color-white, 0.9),
+          rgba($color-white, 0.9)
+        ),
+        url("../../img/nat-10.jpg");
+      &__form {
+        width: 100%;
+      }
+    }
+  }
+}

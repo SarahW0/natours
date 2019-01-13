@@ -1,0 +1,80 @@
+.footer {
+  background-color: $color-grey-dark-1;
+  padding: 10rem 0;
+  font-size: 1.4rem;
+  color: $color-grey-light;
+
+  &__logo-box {
+    text-align: center;
+    @include respond(tab-port) {
+      margin-bottom: 6rem;
+    }
+  }
+
+  &__logo {
+    width: 15rem;
+    margin-bottom: 8rem;
+  }
+
+  &__navigation {
+    border-top: 1px solid $color-grey-dark;
+    display: inline-block;
+
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin-top: 2rem;
+  }
+
+  &__item {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__link {
+    color: $color-grey-light;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: $color-grey-dark-1;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    &:hover,
+    &:active {
+      color: $color-primary;
+      box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+      transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      -o-transform: scale(1.1);
+    }
+  }
+
+  &__copyright {
+    border-top: 1px solid $color-grey-dark;
+    padding-top: 2rem;
+    float: right;
+    width: 80%;
+
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+      float: none;
+    }
+  }
+
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
+}
